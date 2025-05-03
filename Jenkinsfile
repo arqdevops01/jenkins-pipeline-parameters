@@ -11,8 +11,8 @@ pipeline {
             steps {
                 echo 'Setting up Python environment...'
                 // Set up Python environment (optional)
-                #sh 'python3 -m venv venv'
-                #sh '. venv/bin/activate'                
+                //sh 'python3 -m venv venv'
+                //#sh '. venv/bin/activate'                
             }
         }
         stage('Execute') {
