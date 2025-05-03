@@ -12,7 +12,12 @@ pipeline {
                 echo 'Setting up Python environment...'
                 // Set up Python environment (optional)
                 //sh 'python3 -m venv venv'
-                //#sh '. venv/bin/activate'                
+                //#sh '. venv/bin/activate'
+
+                // Set up python enviroment MINICONDA
+                sh 'eval "$(/var/jenkins_home/miniconda3/condabin/conda shell.bash hook)"'
+                sh 'conda activate PyhtonJenkins'
+
             }
         }
         stage('Execute') {
