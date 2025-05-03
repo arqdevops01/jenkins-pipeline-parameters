@@ -22,7 +22,7 @@ pipeline {
                 
                 sh '''
                     /var/jenkins_home/miniconda3/etc/profile.d/conda.sh activate PythonJenkins
-                    python sum.py 1 2
+                    /var/jenkins_home/miniconda3/bin/python sum.py 1 2
                     '''
             }
         }
