@@ -21,8 +21,7 @@ pipeline {
                 //      '''
                 
                 sh '''
-                    source /var/jenkins_home/miniconda3/etc/profile.d/conda.sh
-                    conda activate PythonJenkins 
+                    /var/jenkins_home/miniconda3/etc/profile.d/conda.sh activate PythonJenkins
                     python sum.py ${params.NUMBER1} ${params.NUMBER2}
                     '''
             }
