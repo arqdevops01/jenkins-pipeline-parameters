@@ -15,12 +15,16 @@ pipeline {
                 //#sh '. venv/bin/activate'
 
                 // Set up python enviroment MINICONDA
-                sh '''eval "$(/var/jenkins_home/miniconda3/condabin/conda shell.bash hook)" 
-                      conda activate PythonJenkins
-                      python sum.py "${params.NUMBER1}" "${params.NUMBER2}"
-                      '''
+                //sh '''eval "$(/var/jenkins_home/miniconda3/condabin/conda shell.bash hook)" 
+                //      conda activate PythonJenkins
+                //      python sum.py "${params.NUMBER1}" "${params.NUMBER2}"
+                //      '''
                 
-
+                sh '''
+                    source /var/jenkins_home/miniconda3/etc/profile.d/conda.sh
+                    conda activate PythonJenkins 
+                    python sum.py ${params.NUMBER1} ${params.NUMBER2}
+                    '''
             }
         }
         
