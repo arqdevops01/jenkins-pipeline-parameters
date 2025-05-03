@@ -17,7 +17,7 @@ pipeline {
                 // Set up python enviroment MINICONDA
                 sh '''eval "$(/var/jenkins_home/miniconda3/condabin/conda shell.bash hook)" 
                       conda activate PythonJenkins
-                      python3 sum.py ${params.NUMBER1} ${params.NUMBER2}'''
+                      python3 sum.py "${params.NUMBER1} ${params.NUMBER2}"'''
                 
 
             }
