@@ -10,7 +10,7 @@ pipeline {
         stage('BuildAndExecute') {
             steps {
                 echo 'Build and execute python'
-            sh '/var/jenkins_home/miniconda3/envs/PythonJenkins/bin/python sum.py ${params.NUMBER1} ${params.NUMBER2}'
+            sh '/var/jenkins_home/miniconda3/envs/PythonJenkins/bin/python sum.py ${NUMBER1} ${NUMBER2}'
                     
             }
         }        
