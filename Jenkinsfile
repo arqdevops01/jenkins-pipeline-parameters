@@ -15,8 +15,9 @@ pipeline {
                 //#sh '. venv/bin/activate'
 
                 // Set up python enviroment MINICONDA
-                sh 'eval "$(/var/jenkins_home/miniconda3/condabin/conda shell.bash hook)"'
-                sh '/var/jenkins_home/miniconda3/condabin/conda activate PythonJenkins'
+                sh '''eval "$(/var/jenkins_home/miniconda3/condabin/conda shell.bash hook)" 
+                      conda activate PythonJenkins'''
+                
 
             }
         }
