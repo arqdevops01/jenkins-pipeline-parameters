@@ -7,25 +7,12 @@ pipeline {
     }
 
     stages {
-        stage('BuildExecute') {
+        stage('BuildAndExecute') {
             steps {
                 echo 'Build and execute python'
-                // Set up Python environment (optional)
-                //sh 'python3 -m venv venv'
-                //#sh '. venv/bin/activate'
-
-                // Set up python enviroment MINICONDA
-                //sh '''eval "$(/var/jenkins_home/miniconda3/condabin/conda shell.bash hook)" 
-                //      conda activate PythonJenkins
-                //      python sum.py "${params.NUMBER1}" "${params.NUMBER2}"
-                //      '''
-                
-                sh '''
-                    /var/jenkins_home/miniconda3/etc/profile.d/conda.sh activate PythonJenkins
-                    /var/jenkins_home/miniconda3/bin/python sum.py 1 2
-                    '''
+            sh '/var/jenkins_home/miniconda3/envs/PythonJenkins/bin/python sum.py ${params.NUMBER1} ${params.NUMBER2}'
+                    
             }
-        }
-        
+        }        
     }    
 }
